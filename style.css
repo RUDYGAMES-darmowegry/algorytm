@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200&display=swap');
+
+body{
+    font-family: 'Source Serif Pro', serif;
+    margin: 0;
+	padding: 0;
+	border: 0;
+    box-sizing: border-box;
+    background-color: #1c1c21;
+    color: #fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+h1{
+    font-size: 36px;
+}
+
+p{
+    font-size: 16px;
+}
+
+button{
+    width:200px;
+    height:50px;
+    background-color: #7456ff; 
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+    border:none;
+    text-transform:uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    transition: .5s all;
+}
+
+button:hover{
+    cursor:pointer;
+    background-color: #c5b9ff;
+    color:black;
+}
+
+input{
+    width: 100%;
+    max-width: 330px;
+    height: 30px;
+    font-size:20px;
+    transition: .1s all;
+}
+
+input:focus {
+    outline: 2px solid #7456ff;
+}
+
+li{
+    width:200px;
+    height:100%;
+    border-radius:10px;
+    padding:10px;
+    width:auto;
+    
+}
+
+label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#alert, #alert-other{
+    color: crimson;
+}
+
+.box{
+    /* padding: 20px; */
+    width: auto;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+    border-bottom: 1px solid #7456ff;
+    text-align: center;
+}
+
+.--1{
+    min-height: 150px;
+    justify-content: center;
+}
+
+.--2{
+    min-height: 400px;
+    justify-content: center;
+}
+
+.--1 h1{
+    color: #7456ff;
+}
+
+/* =========================== container =========================== */
+
+.container{
+    width: 96%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px){
+    .container{
+        width: 720px;
+    }
+}
+
+@media (min-width: 1024px){
+    .container{
+        width: 960px;
+    }
+}
+

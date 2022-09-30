@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorytm na pytanie z polskiego: </title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            <div class="box --1">
+                <h1>Algorytm oblicza numer pytany z polskiego</h1>
+                <a href="obliczenia.html" target="_blank">Sprawdź jakie obliczenia wykorzysuje algorytm</a>
+            </div>
+            
+            <div class="box">
+                <h2 id="date">Pytane numery dzisiaj: (28.09.2022r.)</h2>
+
+                    <label for="room">Podaj salę: </label>
+                    <input id="room" type="number" min="1" max="24" maxlength="2">
+                    <p id="alert"></p>
+
+                    <button id="send">Oblicz</button>
+
+                
+        
+                <div id="numbers">
+                    
+                </div>
+            </div>
+        
+            <div class="box --2">
+                <h2>Możesz również podać własną datę: </h2>
+                
+                <!-- <div class="content"> -->
+                    <label for="day">Podaj dzień: </label>
+                    <input id="day" type="number" min="1" max="31">
+                    <label for="month">Podaj miesiąc: </label>
+                    <input id="month" type="number" min="1" max="12">
+                    <label for="room-other">Podaj salę: </label>
+                    <input id="room-other" type="number" min="1" max="24">
+                    <p id="alert-other"></p>
+
+                    <button id="send-other">Oblicz</button>
+                <!-- </div> -->
+                <div id="numbers-other"></div>
+            </div>
+
+        </div>
+    </main>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
