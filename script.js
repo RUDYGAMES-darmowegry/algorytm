@@ -3,14 +3,16 @@ const date = new Date();
 const day = date.getDate();
 let month = date.getMonth();
 month ++;
+const year = date.getFullYear();
 
 const  day1 = day%10;
 const day10 = parseInt(day/10);
 
 
 // console.log("day:",day)
-console.log("day1:",day1)
-console.log("day10:",day10)
+console.log("Autorem strony jest: Marek Gondek")
+// console.log("day1:",day1)
+// console.log("day10:",day10)
 
 let askNumber = 0;
 const numbers = document.getElementById("numbers");
@@ -21,9 +23,15 @@ let dayOther = document.getElementById("day");
 let monthOther = document.getElementById("month") ;
 let roomOther = document.getElementById("room-other");
 
+dayOther  = Number(dayOther);
+
+document.getElementById("date").textContent = `Pytane numery dzisiaj: (${day}.${month}.${year})`;
+
 
 document.getElementById("send").onclick = function () {
     const newRoom = document.getElementById("room").value.trim();
+
+    document.getElementById("numbers").textContent = "";
 
     if (newRoom != "" && isNaN(newRoom) == false ){
         document.getElementById("room").textContent = "";
@@ -31,25 +39,26 @@ document.getElementById("send").onclick = function () {
         let room = newRoom;
         let room1 = room%10;
         let room10 = parseInt(room/10)
-        const algorytm = [day1 + day10 + room1 + room10 - month, day1 + day10 + room1 + room10 + month, 
-                            day1 * day10 + room1 + room10 + month, day1 * day10 + room1 + room10 - month,
-                            day1 + day10]
-
-        console.log("sala:",room)
+        const algorytm = [
+                            day1 + day10 + room1 + room10 - month, 
+                            day1 + day10 + room1 + room10 + month, 
+                            day1 * day10 + room1 + room10 + month, 
+                            day1 * day10 + room1 + room10 - month,
+                            day1 + day10
+                        ]
+               
+        // console.log("sala:",room)
 
         document.getElementById("alert").textContent = "";
         numbers.innerHTML += `<h3>Możliwe numery do pytania (w sali: ${room}):</h3>`;
 
         for(i=0; i<algorytm.length; i++){
             askNumber = algorytm[i];
-            console.log(askNumber);
+            // console.log(askNumber);
             if(askNumber> 0 && askNumber<= 34){
                 numbers.innerHTML +=  "<li>" + askNumber +"</li>";
             }
-            
         }
-
-        
     }
 
     else{
@@ -62,12 +71,12 @@ document.getElementById("send").onclick = function () {
 // tutaj będzie kod
 
 document.getElementById("send-other").onclick = function () {
-    const newRoom = document.getElementById("room-other").value.trim();
-    const newDay = document.getElementById("day").value.trim();
-    const newMonth = document.getElementById("month").value.trim();
+    const newRoom = Number(document.getElementById("room-other").value.trim());
+    const newDay = Number(document.getElementById("day").value.trim());
+    const newMonth = Number(document.getElementById("month").value.trim());
     let askNumber = 0;
     
-    
+    document.getElementById("numbers-other").textContent = "";
 
 
     if (newRoom != "" && isNaN(newRoom) == false && newDay != "" && isNaN(newDay) == false && newMonth != "" && isNaN(newMonth) == false){
@@ -78,6 +87,11 @@ document.getElementById("send-other").onclick = function () {
         roomOther = newRoom;
         dayOther = newDay;
         monthOther= newMonth;
+        console.log("======================")
+        console.log("======================")
+        // console.log("newRoom", newRoom)
+        // console.log("newDay", newDay)
+        // console.log("newMonth", newMonth)
 
         let room1Other = roomOther%10;
         let room10Other = parseInt(roomOther/10)
@@ -86,16 +100,20 @@ document.getElementById("send-other").onclick = function () {
         let day10Other = parseInt(dayOther/10);
 
 
-        const algorytm = [day1Other + day10Other + room1Other + room10Other - monthOther, day1Other + day10Other + room1Other + room10Other + monthOther, 
-                            day1Other * day10Other + room1Other + room10Other + monthOther, day1Other * day10Other + room1Other + room10Other - monthOther,
-                            day1Other + day10Other]
+        const algorytm = [
+                            day1Other + day10Other + room1Other + room10Other - monthOther, 
+                            day1Other + day10Other + room1Other + room10Other + monthOther, 
+                            day1Other * day10Other + room1Other + room10Other + monthOther, 
+                            day1Other * day10Other + room1Other + room10Other - monthOther,
+                            day1Other + day10Other
+                        ]
 
-        console.log("sala 10:",room1Other)
-        console.log("sala 10:",room10Other)
-        console.log("miesiąć:",monthOther)
-        console.log("dzień:",dayOther)
-        console.log("dzień:",day1Other)
-        console.log("dzień:",day10Other)
+        // console.log("sala 1:",room1Other)
+        // console.log("sala 10:",room10Other)
+        // console.log("miesiąć:",monthOther)
+        // console.log("dzień:",dayOther)
+        // console.log("dzień1:",day1Other)
+        // console.log("dzień10:",day10Other)
         
 
         document.getElementById("alert-other").textContent = "";
@@ -103,14 +121,11 @@ document.getElementById("send-other").onclick = function () {
 
         for(i=0; i<algorytm.length; i++){
             askNumber = algorytm[i];
-            console.log(askNumber);
+            // console.log(askNumber);
             if(askNumber> 0 && askNumber<= 34){
                 numbersOther.innerHTML +=  "<li>" + askNumber +"</li>";
             }
-            
-        }
-
-        
+        }  
     }
 
     else{
