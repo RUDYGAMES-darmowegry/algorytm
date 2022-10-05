@@ -39,12 +39,14 @@ document.getElementById("send").onclick = function () {
         let room = newRoom;
         let room1 = room%10;
         let room10 = parseInt(room/10)
+        let month10 = parseInt(month/10)
+
         const algorytm = [
                             day1 + day10 + room1 + room10 - month, 
                             day1 + day10 + room1 + room10 + month, 
                             day1 * day10 + room1 + room10 + month, 
                             day1 * day10 + room1 + room10 - month,
-                            day1 + day10
+                            day1 + day10, day1 * (room1 + month10)
                         ]
                
         // console.log("sala:",room)
@@ -99,13 +101,14 @@ document.getElementById("send-other").onclick = function () {
         let day1Other = dayOther%10;
         let day10Other = parseInt(dayOther/10);
 
+        let month10Other = parseInt(monthOther/10)
 
         const algorytm = [
                             day1Other + day10Other + room1Other + room10Other - monthOther, 
                             day1Other + day10Other + room1Other + room10Other + monthOther, 
                             day1Other * day10Other + room1Other + room10Other + monthOther, 
                             day1Other * day10Other + room1Other + room10Other - monthOther,
-                            day1Other + day10Other
+                            day1Other + day10Other,day1Other * (room1Other + month10Other)
                         ]
 
         // console.log("sala 1:",room1Other)
