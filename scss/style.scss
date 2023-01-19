@@ -1,0 +1,134 @@
+@use 'veriables';
+@use 'colors' as *;
+
+body {
+    position: relative;
+    font-family: 'Source Serif Pro', serif;
+    background-color: #1c1c21;
+    color: #fff;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: .5s all;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 16px;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    background-color: $main-color;
+    color: #fff;
+    padding: 15px 32px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+    border: none;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    transition: .5s all;
+
+    &:hover{
+        cursor: pointer;
+        background-color: $light-green;
+        color: black;
+    }
+}
+
+input {
+    width: 100%;
+    max-width: 330px;
+    height: 30px;
+    font-size: 20px;
+    transition: .1s all;
+}
+
+input:hover,input:focus {
+    outline: 2px solid $main-color;
+}
+
+li {
+    width: 200px;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#alert,#alert-other {
+    color: crimson;
+}
+
+.box {
+    width: auto;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+    border-bottom: 1px solid $main-color;
+    text-align: center;
+}
+
+.--1 {
+    min-height: 150px;
+    justify-content: center;
+
+    h1{
+        color: $main-color;
+    }
+}
+
+.--2 {
+    min-height: 400px;
+    justify-content: center;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 20px;
+    height: 100%;
+    margin-bottom: 20px;
+
+    h1{
+        font-size: 26px;
+    }
+
+    a:hover{
+        color: $light-green;
+    }
+}
+
+.icons{
+    font-size: 26px;
+}
+
+.icons i{
+    margin-left: 10px;
+    transition: 1s all;
+
+    &:hover{
+        color: $light-green;
+        scale: 1.5;
+    }
+}

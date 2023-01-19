@@ -2,6 +2,9 @@
 const date = new Date();
 const day = date.getDate();
 let month = date.getMonth();
+let monthText;
+
+
 month ++;
 const year = date.getFullYear();
 
@@ -25,16 +28,23 @@ let roomOther = document.getElementById("room-other");
 
 dayOther  = Number(dayOther);
 
-document.getElementById("date").textContent = `Pytane numery dzisiaj: (${day}.${month}.${year})`;
+if(month < 10){
+    document.getElementById("date").textContent = `Pytane numery dzisiaj: (${day}.0${month}.${year})`;
+}
+else{
+    document.getElementById("date").textContent = `Pytane numery dzisiaj: (${day}.${month}.${year})`;
+}
 
 
-document.getElementById("send").onclick = function () {
+document.getElementById("send").onclick = () => {
     const newRoom = document.getElementById("room").value.trim();
+    const winNumber = document.getElementById('win-number').value.trim();
 
     document.getElementById("numbers").textContent = "";
 
     if (newRoom != "" && isNaN(newRoom) == false ){
         document.getElementById("room").textContent = "";
+        
 
         let room = newRoom;
         let room1 = room%10;
@@ -59,7 +69,7 @@ document.getElementById("send").onclick = function () {
         for(i=0; i<algorytm.length; i++){
             askNumber = algorytm[i];
             // console.log(askNumber);
-            if(askNumber> 0 && askNumber<= 34){
+            if(askNumber> 0 && askNumber<= 37 && askNumber != winNumber){
                 numbers.innerHTML +=  "<li>" + askNumber +"</li>";
             }
         }
@@ -72,9 +82,7 @@ document.getElementById("send").onclick = function () {
 
 // send-other
 
-// tutaj będzie kod
-
-document.getElementById("send-other").onclick = function () {
+document.getElementById("send-other").onclick = () => {
     const newRoom = Number(document.getElementById("room-other").value.trim());
     const newDay = Number(document.getElementById("day").value.trim());
     const newMonth = Number(document.getElementById("month").value.trim());

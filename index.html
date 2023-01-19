@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorytm na pytanie z polskiego: </title>
-    <link rel="stylesheet" href="style.css">
+    <meta content="Na stronie możesz obliczyć jedne z najbardziej prawdopodobnych numerków do pytania">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/58309639ce.js" crossorigin="anonymous"></script>
     
 </head>
 <body>
-
+  
     <main>
         <div class="container">
             <div class="box --1">
@@ -20,8 +28,16 @@
             <div class="box">
                 <h2 id="date">Pytane numery dzisiaj: (28.09.2022r.)</h2>
 
-                    <label for="room">Podaj salę: </label>
+                    <label for="room">Podaj salę: (pomiń litery)</label>
                     <input id="room" type="number" min="1" max="24" maxlength="2">
+                    <label for="win-number">Podaj szczęśliwy numerek</label>
+                    <input id="win-number" type="number" min="1" max="43" maxlength="2">
+                    <!-- <div>
+                        <input type="checkbox"> 
+                        <p>Podaj szczęśliwy numerek</p>
+                        
+                    </div> -->
+
                     <p id="alert"></p>
 
                     <button id="send">Oblicz</button>
@@ -52,7 +68,18 @@
 
         </div>
     </main>
-    
+
+    <footer>
+
+        <h1>Stronę wykonał: <a href="#">Marek Gondek</a></h1>
+        <p>E-mail: <a href="mailto:fcmaro.g@gmail.com">fcmaro.g@gmail.com</a></p>
+
+        <div class="icons">
+            <a href="https://github.com/RudyGamesv2?tab=repositories" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100069651604555" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/marek_gondek/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

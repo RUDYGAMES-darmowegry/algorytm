@@ -1,0 +1,29 @@
+*{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+	padding: 0;
+	border: 0;
+    box-sizing: border-box;
+}
+
+/* =========================== container =========================== */
+
+.container {
+    width: 96%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 960px;
+    }
+}

@@ -1,0 +1,152 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* =========================== container =========================== */
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 960px;
+  }
+}
+body {
+  position: relative;
+  font-family: "Source Serif Pro", serif;
+  background-color: #1c1c21;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.5s all;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 16px;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  background-color: #35b73a;
+  color: #fff;
+  padding: 15px 32px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  transition: 0.5s all;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #5df563;
+  color: black;
+}
+
+input {
+  width: 100%;
+  max-width: 330px;
+  height: 30px;
+  font-size: 20px;
+  transition: 0.1s all;
+}
+
+input:hover, input:focus {
+  outline: 2px solid #35b73a;
+}
+
+li {
+  width: 200px;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  width: auto;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#alert, #alert-other {
+  color: crimson;
+}
+
+.box {
+  width: auto;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 20px;
+  border-bottom: 1px solid #35b73a;
+  text-align: center;
+}
+
+.--1 {
+  min-height: 150px;
+  justify-content: center;
+}
+.--1 h1 {
+  color: #35b73a;
+}
+
+.--2 {
+  min-height: 400px;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 100%;
+  margin-bottom: 20px;
+}
+footer h1 {
+  font-size: 26px;
+}
+footer a:hover {
+  color: #5df563;
+}
+
+.icons {
+  font-size: 26px;
+}
+
+.icons i {
+  margin-left: 10px;
+  transition: 1s all;
+}
+.icons i:hover {
+  color: #5df563;
+  scale: 1.5;
+}/*# sourceMappingURL=style.css.map */
