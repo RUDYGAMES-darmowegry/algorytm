@@ -9,33 +9,8 @@ body {
   box-sizing: border-box;
 }
 
-/* =========================== container =========================== */
-.container {
-  width: 96%;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 720px;
-  }
-}
-@media (min-width: 1024px) {
-  .container {
-    width: 960px;
-  }
-}
-body {
-  position: relative;
-  font-family: "Source Serif Pro", serif;
-  background-color: #1c1c21;
-  color: #fff;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-  transition: 0.5s all;
+h1, h2, h3, h4, p, input {
+  text-align: center;
 }
 
 h1 {
@@ -46,37 +21,88 @@ p {
   font-size: 16px;
 }
 
+body {
+  position: relative;
+  font-family: "Source Serif Pro", serif;
+  background-color: #1c1c21;
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.5s color;
+}
+
 button {
+  position: relative;
   width: 200px;
   height: 50px;
-  background-color: #35b73a;
+  background-color: #1ef526;
   color: #fff;
   padding: 15px 32px;
   font-size: 16px;
   border-radius: 4px;
-  transition-duration: 0.4s;
   border: none;
   text-transform: uppercase;
   margin-top: 20px;
   margin-bottom: 10px;
-  transition: 0.5s all;
-}
-button:hover {
   cursor: pointer;
-  background-color: #5df563;
-  color: black;
+  overflow: hidden;
+  z-index: 1;
+}
+button:hover .bar {
+  transform: translateY(0) scale(1.8);
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  background-color: #35b73a;
+  transform: translateY(120%);
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+.one {
+  left: 0;
+  transition-delay: 0.3s;
+}
+
+.two {
+  left: 20%;
+  transition-delay: 0.1s;
+}
+
+.three {
+  left: 40%;
+  transition-delay: 0.2s;
+}
+
+.four {
+  left: 60%;
+}
+
+.five {
+  left: 80%;
+  transition-delay: 0.3s;
 }
 
 input {
+  position: relative;
   width: 100%;
   max-width: 330px;
   height: 30px;
   font-size: 20px;
-  transition: 0.1s all;
+  transition: 0.5s all;
+  outline: none;
 }
 
 input:hover, input:focus {
-  outline: 2px solid #35b73a;
+  -webkit-animation: shadow 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
+          animation: shadow 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate both;
 }
 
 li {
@@ -135,7 +161,7 @@ footer h1 {
   font-size: 26px;
 }
 footer a:hover {
-  color: #5df563;
+  color: #1ef526;
 }
 
 .icons {
@@ -144,9 +170,124 @@ footer a:hover {
 
 .icons i {
   margin-left: 10px;
-  transition: 1s all;
+  transition: color, scale 1s;
 }
 .icons i:hover {
-  color: #5df563;
+  color: #1ef526;
   scale: 1.5;
+}
+
+@-webkit-keyframes shadow {
+  0% {
+    box-shadow: 0 0 0 0 #1ef526;
+  }
+  100% {
+    box-shadow: 0 0 10px 0px #1ef526;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: 0 0 0 0 #1ef526;
+  }
+  100% {
+    box-shadow: 0 0 10px 0px #1ef526;
+  }
+}
+.arrows {
+  display: none;
+}
+
+.arrow-container {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+}
+
+.arrow-container-down {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.wheel {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #35b73a;
+  transition: 0.5s background-color;
+}
+.wheel:hover {
+  background-color: rgb(6, 92, 6);
+}
+
+.arrow {
+  position: absolute;
+  left: 8.5px;
+  border: solid #1ef526;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  -webkit-animation: arrow 1.5s infinite both;
+          animation: arrow 1.5s infinite both;
+}
+
+.up {
+  top: 11px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  bottom: 11px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* =========================== container =========================== */
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+
+@media (max-width: 405px) {
+  h1 {
+    font-size: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+  .arrows {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 960px;
+  }
 }/*# sourceMappingURL=style.css.map */

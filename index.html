@@ -18,6 +18,26 @@
 </head>
 <body>
   
+    <div class="arrows">
+        <a href="#"> 
+            <div class="arrow-container">
+                <div class="wheel">
+                    <i class="arrow up"></i>
+                </div>
+            </div>
+        </a>
+        
+        <a href="#footer">
+            <div class="arrow-container-down">
+                <div class="wheel">
+                    <i class="arrow down"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+
+
     <main>
         <div class="container">
             <div class="box --1">
@@ -29,18 +49,20 @@
                 <h2 id="date">Pytane numery dzisiaj: (28.09.2022r.)</h2>
 
                     <label for="room">Podaj salę: (pomiń litery)</label>
-                    <input id="room" type="number" min="1" max="24" maxlength="2">
+                    <input id="room" type="number" min="1" max="24">
                     <label for="win-number">Podaj szczęśliwy numerek</label>
-                    <input id="win-number" type="number" min="1" max="43" maxlength="2">
-                    <!-- <div>
-                        <input type="checkbox"> 
-                        <p>Podaj szczęśliwy numerek</p>
-                        
-                    </div> -->
+                    <input id="win-number" type="number" min="1" max="43">
 
                     <p id="alert"></p>
 
-                    <button id="send">Oblicz</button>
+                    <button id="send" type="submit">
+                        <span class="bar one"></span>
+                        <span class="bar two"></span>
+                        <span class="bar three"></span>
+                        <span class="bar four"></span>
+                        <span class="bar five"></span>
+                        Oblicz
+                    </button>
 
                 
         
@@ -61,7 +83,14 @@
                     <input id="room-other" type="number" min="1" max="24">
                     <p id="alert-other"></p>
 
-                    <button id="send-other">Oblicz</button>
+                    <button id="send-other">
+                        <span class="bar one"></span>
+                        <span class="bar two"></span>
+                        <span class="bar three"></span>
+                        <span class="bar four"></span>
+                        <span class="bar five"></span>
+                        Oblicz
+                    </button>
                 <!-- </div> -->
                 <div id="numbers-other"></div>
             </div>
@@ -69,7 +98,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer id="footer">
 
         <h1>Stronę wykonał: <a href="#">Marek Gondek</a></h1>
         <p>E-mail: <a href="mailto:fcmaro.g@gmail.com">fcmaro.g@gmail.com</a></p>

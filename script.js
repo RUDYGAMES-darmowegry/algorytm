@@ -12,15 +12,13 @@ const  day1 = day%10;
 const day10 = parseInt(day/10);
 
 
-// console.log("day:",day)
 console.log("Autorem strony jest: Marek Gondek")
-// console.log("day1:",day1)
-// console.log("day10:",day10)
+
 
 let askNumber = 0;
 const numbers = document.getElementById("numbers");
 
-// drugi program
+// second program
 const numbersOther = document.getElementById("numbers-other");
 let dayOther = document.getElementById("day");
 let monthOther = document.getElementById("month") ;
@@ -60,15 +58,12 @@ document.getElementById("send").onclick = () => {
                             day1 + day10, day1 * (room1 + month10),
                             (day1 + room1) * room10 + day10 + month1 + month10
                         ]
-               
-        // console.log("sala:",room)
 
         document.getElementById("alert").textContent = "";
         numbers.innerHTML += `<h3>Możliwe numery do pytania (w sali: ${room}):</h3>`;
 
         for(i=0; i<algorytm.length; i++){
             askNumber = algorytm[i];
-            // console.log(askNumber);
             if(askNumber> 0 && askNumber<= 37 && askNumber != winNumber){
                 numbers.innerHTML +=  "<li>" + askNumber +"</li>";
             }
@@ -99,11 +94,7 @@ document.getElementById("send-other").onclick = () => {
         roomOther = newRoom;
         dayOther = newDay;
         monthOther= newMonth;
-        console.log("======================")
-        console.log("======================")
-        // console.log("newRoom", newRoom)
-        // console.log("newDay", newDay)
-        // console.log("newMonth", newMonth)
+
 
         let room1Other = roomOther%10;
         let room10Other = parseInt(roomOther/10)
@@ -123,20 +114,11 @@ document.getElementById("send-other").onclick = () => {
                             (day1Other + room1Other) * room10Other + day10Other + month1Other + month10Other
                         ]
 
-        // console.log("sala 1:",room1Other)
-        // console.log("sala 10:",room10Other)
-        // console.log("miesiąć:",monthOther)
-        // console.log("dzień:",dayOther)
-        // console.log("dzień1:",day1Other)
-        // console.log("dzień10:",day10Other)
-        
-
         document.getElementById("alert-other").textContent = "";
         numbersOther.innerHTML += `<h3>Możliwe numery do pytania (w dniu ${dayOther}, w miesiącu ${monthOther}, w sali ${roomOther}): </h3>`;
 
         for(i=0; i<algorytm.length; i++){
             askNumber = algorytm[i];
-            // console.log(askNumber);
             if(askNumber> 0 && askNumber<= 34){
                 numbersOther.innerHTML +=  "<li>" + askNumber +"</li>";
             }
